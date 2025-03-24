@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>オーイシ生成マシーンvol.1</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        #title {
+            font-size: 50px; /* 題名の文字サイズ */
+            font-weight: bold;
+            margin-bottom: 40px; /* 下の要素との間隔 */
+            color: #333;
+        }
+        #result {
+            font-size: 120px; /* 結果の文字サイズ */
+            font-weight: bold;
+            text-align: center;
+            margin: 1px 0;
+            color: #000;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 32px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">オーイシ生成マシーンvol.1</div> <!-- 題名を表示 -->
+    <div id="result"></div>
+    <button onclick="generateUniqueText()">生成する</button>
+
+    <script>
+        const originalText = ["オ", "ー", "イ", "シ", "マ", "サ", "ヨ", "シ"];
+
+        function generateUniqueText() {
+            // シャッフルアルゴリズムを使用して文字をランダムに並び替える
+            let shuffled = [...originalText].sort(() => Math.random() - 0.5);
+            document.getElementById("result").textContent = shuffled.join("　"); // 結果を間隔付きで表示
+        }
+    </script>
+</body>
+</html>
